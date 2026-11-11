@@ -1,711 +1,1582 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#090a0c">
-<meta name="description" content="KAFAS Software Trading L.L.C. - Software and technology solutions.">
+<meta name="theme-color" content="#080808">
+<meta name="description" content="KAFAS Software Trading L.L.C. - Software, IT and technology solutions in Dubai.">
 <title>KAFAS Software Trading L.L.C. | Technology, Elevated</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-:root {
-  --bg:#090a0c;
-  --panel:#12151a;
-  --gold:#d8b56d;
-  --gold2:#f1d99e;
-  --white:#f7f5ef;
-  --muted:#aaa9a3;
-  --line:rgba(216,181,109,.23);
-  --max:1160px;
+:root{
+ --bg:#070707;
+ --panel:#11100e;
+ --gold:#d8a441;
+ --gold2:#ffe4a0;
+ --white:#fff9ec;
+ --muted:#b8b1a4;
+ --line:rgba(216,164,65,.27);
+ --max:1200px;
 }
+
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:85px}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
 body{
-  font-family:"DM Sans",sans-serif;
-  background:radial-gradient(ellipse at 80% 8%,rgba(216,181,109,.1),transparent 32%),var(--bg);
-  color:var(--white);
-  line-height:1.65;
-  overflow-x:hidden;
+ font-family:"DM Sans",sans-serif;
+ background:var(--bg);
+ color:var(--white);
+ line-height:1.7;
+ overflow-x:hidden;
 }
 a{color:inherit;text-decoration:none}
 button,input,textarea,select{font:inherit}
-.wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
-.topline{height:3px;background:linear-gradient(90deg,transparent,var(--gold2),var(--gold),transparent)}
+img{max-width:100%;display:block}
+.wrap{width:min(var(--max),calc(100% - 44px));margin:auto}
+
+.topline{
+ height:3px;
+ background:linear-gradient(90deg,transparent,#a96b1e,var(--gold2),#a96b1e,transparent);
+}
+
+/* HEADER */
+
 header{
-  position:sticky;top:0;z-index:20;
-  background:rgba(9,10,12,.92);
-  backdrop-filter:blur(18px);
-  border-bottom:1px solid #ffffff12;
+ position:sticky;
+ top:0;
+ z-index:100;
+ background:rgba(5,5,5,.91);
+ backdrop-filter:blur(20px);
+ border-bottom:1px solid #ffffff12;
 }
+
 .nav{
-  height:78px;display:flex;align-items:center;
-  justify-content:space-between;gap:20px;
+ height:84px;
+ display:flex;
+ align-items:center;
+ justify-content:space-between;
+ gap:20px;
 }
-.brand{display:flex;align-items:center;gap:11px}
-.mark{
-  width:42px;height:42px;border:1px solid var(--gold);
-  border-radius:11px;display:grid;place-items:center;
-  color:var(--gold2);font:800 20px Manrope;
+
+.brand{
+ display:flex;
+ align-items:center;
+ gap:12px;
+ min-width:220px;
 }
-.brand b{font:800 18px Manrope;letter-spacing:2px}
-.brand small{display:block;color:var(--gold);font-size:9px;letter-spacing:2px}
-.links{display:flex;gap:24px}
-.links a{font-size:12px;color:#d4d1c9}
-.links a:hover,.footlinks a:hover{color:var(--gold2)}
-.navright{display:flex;gap:10px;align-items:center}
+
+.brand img{
+ width:53px;
+ height:53px;
+ object-fit:contain;
+ border-radius:50%;
+}
+
+.brand b{
+ display:block;
+ font:800 17px Manrope,sans-serif;
+ letter-spacing:3px;
+}
+
+.brand small{
+ display:block;
+ color:var(--gold2);
+ font-size:9px;
+ letter-spacing:1.5px;
+}
+
+.links{
+ display:flex;
+ align-items:center;
+ gap:23px;
+}
+
+.links a{
+ color:#ded6c8;
+ font-size:12px;
+ transition:.3s;
+}
+
+.links a:hover{color:var(--gold2)}
+
+.navright{
+ display:flex;
+ align-items:center;
+ gap:10px;
+}
+
 .lang,.menu{
-  background:none;border:1px solid var(--line);color:white;
-  border-radius:8px;padding:9px 12px;font-size:12px;
+ color:white;
+ background:#ffffff08;
+ border:1px solid var(--line);
+ border-radius:8px;
+ padding:10px 13px;
+ cursor:pointer;
+ font-size:12px;
 }
-.menu{display:none;font-size:20px}
+
+.menu{
+ display:none;
+ font-size:20px;
+}
+
 .btn{
-  display:inline-flex;justify-content:center;align-items:center;
-  padding:13px 19px;border:1px solid var(--gold);
-  border-radius:8px;font-size:13px;font-weight:700;
-  transition:.25s;cursor:pointer;
+ display:inline-flex;
+ align-items:center;
+ justify-content:center;
+ gap:8px;
+ padding:13px 20px;
+ border:1px solid var(--gold);
+ border-radius:7px;
+ font-size:12px;
+ font-weight:700;
+ transition:.3s;
+ cursor:pointer;
 }
-.gold{background:linear-gradient(130deg,var(--gold2),var(--gold));color:#17130b}
-.outline{color:var(--gold2);background:#d8b56d09}
-.btn:hover{transform:translateY(-3px);box-shadow:0 10px 30px #d8b56d25}
 
-.hero{padding:85px 0 70px;min-height:660px;display:grid;align-items:center}
-.heroGrid{
-  display:grid;grid-template-columns:1.05fr .95fr;
-  gap:45px;align-items:center;
+.gold{
+ color:#171006;
+ background:linear-gradient(130deg,#ffe5a4,#c88b2e);
 }
-.eyebrow{font-size:11px;letter-spacing:2.4px;text-transform:uppercase;color:var(--gold2);font-weight:700}
+
+.outline{
+ color:var(--gold2);
+ background:#d8a4410b;
+}
+
+.btn:hover{
+ transform:translateY(-4px);
+ box-shadow:0 12px 35px #d8a44135;
+}
+
+/* HERO */
+
+.hero{
+ min-height:720px;
+ position:relative;
+ isolation:isolate;
+ display:grid;
+ align-items:center;
+ padding:85px 0 75px;
+ overflow:hidden;
+ background:#050505;
+}
+
+.hero-bg{
+ position:absolute;
+ inset:0;
+ z-index:-3;
+ background:url("kafas-home-bg.png") center/cover no-repeat;
+ opacity:.75;
+ animation:bgMove 25s ease-in-out infinite alternate;
+}
+
+@keyframes bgMove{
+ from{transform:scale(1.02) translateX(0)}
+ to{transform:scale(1.13) translateX(-1.5%)}
+}
+
+.hero-overlay{
+ position:absolute;
+ inset:0;
+ z-index:-2;
+ background:
+ linear-gradient(90deg,rgba(0,0,0,.96),rgba(0,0,0,.78) 48%,rgba(0,0,0,.28)),
+ linear-gradient(0deg,#070707 0%,transparent 28%);
+}
+
+#particles{
+ position:absolute;
+ inset:0;
+ width:100%;
+ height:100%;
+ z-index:-1;
+ pointer-events:none;
+}
+
+.hero-grid{
+ display:grid;
+ grid-template-columns:1.05fr .95fr;
+ gap:35px;
+ align-items:center;
+}
+
+.eyebrow{
+ color:var(--gold2);
+ font-size:10px;
+ letter-spacing:3px;
+ text-transform:uppercase;
+ font-weight:700;
+}
+
 .eyebrow:before{
-  content:"";display:inline-block;width:27px;height:1px;
-  background:var(--gold);vertical-align:middle;margin-right:10px;
+ content:"";
+ display:inline-block;
+ width:28px;
+ height:1px;
+ background:var(--gold);
+ vertical-align:middle;
+ margin-right:11px;
 }
-h1,h2,h3{font-family:Manrope,sans-serif;line-height:1.14}
-.hero h1{font-size:clamp(42px,6vw,72px);letter-spacing:-3px;margin:22px 0}
+
+h1,h2,h3{
+ font-family:Manrope,sans-serif;
+ line-height:1.15;
+}
+
+.hero h1{
+ font-size:clamp(43px,6vw,76px);
+ letter-spacing:-3px;
+ margin:23px 0;
+}
+
 .shine{
-  background:linear-gradient(100deg,#fff0c8,var(--gold),#a77e39);
-  color:transparent;background-clip:text;
+ background:linear-gradient(100deg,#fff0c8,#e5b65c,#a96c25);
+ color:transparent;
+ background-clip:text;
+ -webkit-background-clip:text;
 }
-.lead{font-size:15px;color:#b9b8b1;max-width:560px;line-height:1.9}
-.actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:30px}
-.stats{display:flex;gap:28px;flex-wrap:wrap;margin-top:40px}
-.stats b{display:block;font:700 12px Manrope}
-.stats span{font-size:10px;color:var(--muted)}
 
-.art{height:440px;display:grid;place-items:center;position:relative;perspective:900px}
-.orb{
-  width:320px;height:320px;border:1px solid #d8b56d55;
-  border-radius:50%;position:absolute;
-  box-shadow:inset 0 0 60px #d8b56d14,0 0 70px #d8b56d12;
-  animation:float 7s ease-in-out infinite;
+.lead{
+ color:#d0c7b7;
+ max-width:580px;
+ font-size:14px;
+ line-height:2;
 }
-.orb:before,.orb:after{
-  content:"";position:absolute;inset:25px;border:1px dashed #d8b56d55;
-  border-radius:50%;transform:rotateX(65deg);
+
+.actions{
+ display:flex;
+ gap:13px;
+ flex-wrap:wrap;
+ margin-top:30px;
 }
-.orb:after{inset:55px;transform:rotateY(65deg)}
-.globe{
-  width:205px;height:205px;border-radius:50%;
-  border:1px solid #f1d99e88;
-  background:
-    radial-gradient(circle at 35% 25%,#f1d99e33,transparent 58%),
-    repeating-linear-gradient(0deg,transparent 0 16px,#d8b56d20 17px,transparent 18px),
-    repeating-linear-gradient(90deg,transparent 0 16px,#d8b56d20 17px,transparent 18px);
-  box-shadow:0 0 60px #d8b56d25,inset -25px -20px 45px #000b;
-  animation:float 6s ease-in-out infinite reverse;
+
+.stats{
+ display:flex;
+ gap:30px;
+ flex-wrap:wrap;
+ margin-top:42px;
 }
+
+.stats b{
+ display:block;
+ color:#ffebc2;
+ font:700 11px Manrope;
+ letter-spacing:1px;
+}
+
+.stats span{
+ color:var(--muted);
+ font-size:10px;
+}
+
+/* 3D HERO LOGO */
+
+.hero-art{
+ height:480px;
+ display:grid;
+ place-items:center;
+ position:relative;
+ perspective:1100px;
+ transform-style:preserve-3d;
+}
+
+.logo-stage{
+ width:310px;
+ height:310px;
+ display:grid;
+ place-items:center;
+ position:relative;
+ transform-style:preserve-3d;
+ animation:stageFloat 7s ease-in-out infinite;
+}
+
+.logo-stage img{
+ width:100%;
+ height:100%;
+ object-fit:contain;
+ filter:drop-shadow(0 15px 45px #dba23c65);
+ transform:translateZ(45px);
+}
+
+@keyframes stageFloat{
+ 0%,100%{transform:translateY(0) rotateY(-7deg)}
+ 50%{transform:translateY(-17px) rotateY(7deg)}
+}
+
 .orbit{
-  position:absolute;width:420px;height:145px;
-  border:1px solid #d8b56d66;border-radius:50%;
-  transform:rotate(-27deg);animation:orbit 20s linear infinite;
+ position:absolute;
+ width:390px;
+ height:390px;
+ border:1px solid #e9bd6b8a;
+ border-radius:50%;
+ transform:rotateX(70deg) rotateZ(-25deg);
+ box-shadow:0 0 40px #d8a44116;
+ animation:orbitOne 18s linear infinite;
 }
-.orbit.two{width:440px;height:165px;transform:rotate(60deg);opacity:.55;animation-duration:28s}
-.floatcard{
-  position:absolute;background:#14171be8;border:1px solid var(--line);
-  border-radius:10px;padding:12px 15px;backdrop-filter:blur(12px);
-  box-shadow:0 15px 40px #0008;
-}
-.floatcard small{display:block;color:var(--muted);font-size:9px}
-.floatcard b{color:var(--gold2);font-size:12px}
-.f1{top:45px;right:0}
-.f2{bottom:50px;left:0}
-.f3{bottom:0;right:35px}
-@keyframes float{50%{transform:translateY(-13px) rotate(2deg)}}
-@keyframes orbit{to{transform:rotate(333deg)}}
 
-section.content{padding:90px 0}
-.head{max-width:680px;margin:0 auto 45px}
+.orbit.two{
+ width:445px;
+ height:445px;
+ border-color:#e9bd6b55;
+ transform:rotateY(68deg) rotateZ(20deg);
+ animation:orbitTwo 25s linear infinite;
+}
+
+.orbit.three{
+ width:335px;
+ height:335px;
+ border-style:dashed;
+ border-color:#e9bd6b45;
+ transform:rotateX(55deg) rotateY(30deg);
+ animation:orbitOne 32s linear infinite reverse;
+}
+
+@keyframes orbitOne{
+ to{transform:rotateX(70deg) rotateZ(335deg)}
+}
+@keyframes orbitTwo{
+ to{transform:rotateY(68deg) rotateZ(380deg)}
+}
+
+.light-dot{
+ position:absolute;
+ width:8px;
+ height:8px;
+ border-radius:50%;
+ background:#ffe6a4;
+ box-shadow:0 0 22px 7px #e8ae4d99;
+}
+
+.dot-one{top:15%;right:15%}
+.dot-two{bottom:18%;left:14%;width:5px;height:5px}
+.dot-three{top:45%;left:7%;width:4px;height:4px}
+
+.float-card{
+ position:absolute;
+ padding:12px 16px;
+ border:1px solid var(--line);
+ background:rgba(17,15,11,.86);
+ backdrop-filter:blur(12px);
+ border-radius:9px;
+ box-shadow:0 15px 35px #0009;
+ animation:cardFloat 5s ease-in-out infinite;
+}
+
+.float-card small{
+ display:block;
+ color:var(--muted);
+ font-size:9px;
+ letter-spacing:1px;
+}
+
+.float-card b{
+ color:var(--gold2);
+ font-size:12px;
+}
+
+.float-one{top:45px;right:0}
+.float-two{bottom:65px;left:0;animation-delay:1.2s}
+.float-three{bottom:5px;right:20px;animation-delay:2s}
+
+@keyframes cardFloat{
+ 50%{transform:translateY(-12px)}
+}
+
+/* GENERAL SECTIONS */
+
+section.content{padding:95px 0}
+
+.head{
+ max-width:720px;
+ margin:0 auto 45px;
+}
+
 .head.center{text-align:center}
-.head h2,.about h2,.contact h2{
-  font-size:clamp(30px,4vw,44px);letter-spacing:-1.3px;margin:15px 0;
-}
-.head p,.about p,.contact p{color:var(--muted);font-size:13px}
-.aboutgrid{
-  display:grid;grid-template-columns:.9fr 1.1fr;
-  gap:60px;align-items:center;
-}
-.visual{
-  min-height:360px;border:1px solid var(--line);border-radius:16px;
-  background:linear-gradient(145deg,#1a1b1c,#0b0d10);
-  display:grid;place-items:center;position:relative;overflow:hidden;
-}
-.visual:before{
-  content:"K";position:absolute;font:800 280px Manrope;
-  color:#d8b56d0c;
-}
-.visualinner{position:relative;text-align:center}
-.visualinner .mark{width:72px;height:72px;font-size:32px;margin:auto auto 18px}
-.visualinner h3{font-size:24px}
-.visualinner small{color:var(--gold);letter-spacing:3px}
-.about p{margin:0 0 15px}
-.ticks{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:23px 0}
-.ticks span{font-size:12px}
-.ticks span:before{content:"✦";color:var(--gold);margin-right:8px}
 
-.softbg{background:linear-gradient(180deg,transparent,#ffffff05,transparent)}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.head h2,.about h2,.contact h2{
+ font-size:clamp(30px,4vw,46px);
+ letter-spacing:-1.5px;
+ margin:15px 0;
+}
+
+.head p,.about p,.contact p{
+ color:var(--muted);
+ font-size:13px;
+}
+
+/* ABOUT */
+
+.about-grid{
+ display:grid;
+ grid-template-columns:.9fr 1.1fr;
+ gap:65px;
+ align-items:center;
+}
+
+.visual{
+ min-height:400px;
+ border:1px solid var(--line);
+ border-radius:16px;
+ background:
+ radial-gradient(circle at center,#d8a4411b,transparent 55%),
+ linear-gradient(145deg,#1b1710,#080808);
+ display:grid;
+ place-items:center;
+ position:relative;
+ overflow:hidden;
+}
+
+.visual:before,.visual:after{
+ content:"";
+ position:absolute;
+ width:300px;
+ height:300px;
+ border:1px solid #d8a44144;
+ border-radius:50%;
+ box-shadow:0 0 0 25px #d8a4410a,0 0 0 55px #d8a44107;
+ animation:visualPulse 7s ease-in-out infinite;
+}
+
+.visual:after{
+ width:220px;
+ height:220px;
+ animation-delay:2s;
+}
+
+@keyframes visualPulse{
+ 50%{transform:scale(1.1);opacity:.4}
+}
+
+.visual img{
+ width:190px;
+ position:relative;
+ z-index:2;
+ filter:drop-shadow(0 10px 35px #d69c3c45);
+}
+
+.about p{margin-bottom:15px}
+
+.ticks{
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:13px;
+ margin:25px 0;
+}
+
+.ticks span{font-size:12px}
+.ticks span:before{
+ content:"✦";
+ color:var(--gold);
+ margin-right:9px;
+}
+
+/* SERVICES */
+
+.softbg{
+ background:linear-gradient(180deg,transparent,#ffffff05,transparent);
+}
+
+.cards{
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:17px;
+}
+
 .card{
-  padding:25px;border:1px solid #ffffff12;border-radius:13px;
-  background:linear-gradient(145deg,#ffffff0b,#ffffff02);
-  min-height:220px;transition:.3s;
+ padding:27px;
+ min-height:225px;
+ border:1px solid #ffffff14;
+ border-radius:13px;
+ background:linear-gradient(145deg,#ffffff0c,#ffffff02);
+ transition:.35s;
+ position:relative;
+ overflow:hidden;
 }
+
+.card:before{
+ content:"";
+ position:absolute;
+ width:130px;
+ height:130px;
+ right:-80px;
+ bottom:-80px;
+ border:1px solid #d8a44135;
+ border-radius:50%;
+ transition:.4s;
+}
+
 .card:hover{
-  transform:translateY(-6px);border-color:var(--line);
-  background:#d8b56d0d;
+ transform:translateY(-8px);
+ border-color:var(--line);
+ background:#d8a4410e;
 }
+
+.card:hover:before{transform:scale(2)}
+
 .ico{
-  width:43px;height:43px;border:1px solid var(--line);
-  border-radius:11px;display:grid;place-items:center;
-  color:var(--gold2);font-size:20px;margin-bottom:20px;
+ width:45px;
+ height:45px;
+ display:grid;
+ place-items:center;
+ border:1px solid var(--line);
+ border-radius:11px;
+ color:var(--gold2);
+ font-size:20px;
+ margin-bottom:20px;
 }
-.card h3{font-size:16px;margin-bottom:10px}
+
+.card h3{font-size:16px;margin-bottom:11px}
 .card p{font-size:12px;color:var(--muted)}
-.industries{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+
+/* INDUSTRIES */
+
+.industries{
+ display:grid;
+ grid-template-columns:repeat(4,1fr);
+ gap:13px;
+}
+
 .industry{
-  padding:20px 12px;text-align:center;border:1px solid #ffffff12;
-  border-radius:10px;background:#111419;
+ padding:23px 12px;
+ text-align:center;
+ border:1px solid #ffffff15;
+ border-radius:10px;
+ background:#11100d;
+ transition:.3s;
 }
-.industry span{display:block;font-size:23px;color:var(--gold);margin-bottom:8px}
+
+.industry:hover{
+ border-color:var(--gold);
+ transform:translateY(-5px);
+}
+
+.industry span{
+ display:block;
+ color:var(--gold);
+ font-size:25px;
+ margin-bottom:8px;
+}
+
 .industry b{font-size:12px}
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:step}
-.step{border-top:1px solid var(--line);padding-top:18px;counter-increment:step}
-.step:before{content:"0" counter(step);font:700 26px Manrope;color:var(--gold)}
-.step h3{font-size:16px;margin:13px 0 8px}
+
+/* APPROACH */
+
+.steps{
+ display:grid;
+ grid-template-columns:repeat(4,1fr);
+ gap:20px;
+ counter-reset:step;
+}
+
+.step{
+ border-top:1px solid var(--line);
+ padding-top:18px;
+ counter-increment:step;
+}
+
+.step:before{
+ content:"0" counter(step);
+ font:700 27px Manrope;
+ color:var(--gold);
+}
+
+.step h3{font-size:16px;margin:14px 0 8px}
 .step p{font-size:12px;color:var(--muted)}
-.projects{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+
+/* CAPABILITIES */
+
+.projects{
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:17px;
+}
+
 .project{
-  padding:28px;min-height:210px;border:1px solid #ffffff15;
-  border-radius:13px;background:linear-gradient(140deg,#1b1b19,#0e1013);
-  position:relative;overflow:hidden;
+ padding:30px;
+ min-height:220px;
+ border:1px solid #ffffff15;
+ border-radius:13px;
+ background:linear-gradient(140deg,#1b1710,#0d0d0d);
+ position:relative;
+ overflow:hidden;
 }
+
 .project:after{
-  content:"";position:absolute;width:190px;height:190px;
-  border:1px solid #d8b56d22;border-radius:50%;
-  right:-75px;bottom:-95px;
-  box-shadow:0 0 0 22px #d8b56d08,0 0 0 45px #d8b56d05;
+ content:"";
+ position:absolute;
+ width:190px;
+ height:190px;
+ border:1px solid #d8a44135;
+ border-radius:50%;
+ right:-75px;
+ bottom:-95px;
+ box-shadow:0 0 0 22px #d8a44109,0 0 0 45px #d8a44106;
 }
-.project small{font-size:10px;letter-spacing:2px;color:var(--gold)}
-.project h3{font-size:21px;margin:14px 0}
-.project p{font-size:12px;color:var(--muted);max-width:360px}
+
+.project small{
+ color:var(--gold);
+ font-size:10px;
+ letter-spacing:2px;
+}
+
+.project h3{font-size:21px;margin:15px 0}
+.project p{font-size:12px;color:var(--muted);max-width:370px}
+
+/* CTA */
+
 .cta{
-  padding:48px;border:1px solid var(--line);border-radius:16px;
-  background:radial-gradient(ellipse at 90% 5%,#d8b56d22,transparent 45%),#12151a;
-  display:flex;align-items:center;justify-content:space-between;gap:25px;
+ padding:48px;
+ border:1px solid var(--line);
+ border-radius:16px;
+ background:
+ radial-gradient(ellipse at 90% 5%,#d8a44125,transparent 45%),
+ #12100c;
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ gap:25px;
 }
-.cta h2{font-size:clamp(27px,4vw,38px);margin:12px 0}
+
+.cta h2{font-size:clamp(27px,4vw,39px);margin:12px 0}
 .cta p{font-size:13px;color:var(--muted)}
-.contactgrid{display:grid;grid-template-columns:.8fr 1.2fr;gap:50px}
-.contact h2{margin:15px 0}
-.contactline{display:flex;gap:12px;align-items:center;margin:20px 0}
-.contactline .ico{margin:0;flex-shrink:0}
-.contactline small{display:block;font-size:10px;color:var(--muted)}
-.contactline b{font-size:13px;overflow-wrap:anywhere}
-form{padding:27px;background:#12151a;border:1px solid #ffffff14;border-radius:14px}
-.row{display:grid;grid-template-columns:1fr 1fr;gap:13px}
-.field{margin-bottom:14px}
-.field label{display:block;font-size:11px;margin-bottom:7px;color:#ddd8cb}
-.field input,.field textarea,.field select{
-  width:100%;background:#090b0e;border:1px solid #ffffff20;
-  border-radius:8px;padding:12px;color:white;font-size:12px;outline:none;
+
+/* CONTACT */
+
+.contact-grid{
+ display:grid;
+ grid-template-columns:.8fr 1.2fr;
+ gap:50px;
 }
-.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--gold)}
-.field textarea{min-height:120px;resize:vertical}
-.note{font-size:10px;color:var(--muted);margin-top:11px}
-footer{border-top:1px solid #ffffff12;padding:30px 0}
-.foot{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}
+
+.contact h2{margin:15px 0}
+
+.contact-line{
+ display:flex;
+ gap:13px;
+ align-items:center;
+ margin:22px 0;
+}
+
+.contact-line .ico{
+ margin:0;
+ flex-shrink:0;
+}
+
+.contact-line small{
+ display:block;
+ color:var(--muted);
+ font-size:10px;
+}
+
+.contact-line b{
+ font-size:13px;
+ overflow-wrap:anywhere;
+}
+
+form{
+ padding:28px;
+ background:#12100d;
+ border:1px solid #ffffff17;
+ border-radius:14px;
+}
+
+.row{
+ display:grid;
+ grid-template-columns:1fr 1fr;
+ gap:14px;
+}
+
+.field{margin-bottom:15px}
+
+.field label{
+ display:block;
+ color:#e7dece;
+ font-size:11px;
+ margin-bottom:7px;
+}
+
+.field input,.field textarea,.field select{
+ width:100%;
+ background:#090909;
+ border:1px solid #ffffff22;
+ border-radius:8px;
+ padding:13px;
+ color:white;
+ font-size:12px;
+ outline:none;
+}
+
+.field input:focus,.field textarea:focus,.field select:focus{
+ border-color:var(--gold);
+}
+
+.field textarea{
+ min-height:125px;
+ resize:vertical;
+}
+
+.note{
+ color:var(--muted);
+ font-size:10px;
+ margin-top:12px;
+}
+
+/* FOOTER */
+
+footer{
+ border-top:1px solid #ffffff15;
+ padding:32px 0;
+}
+
+.foot{
+ display:flex;
+ align-items:center;
+ justify-content:space-between;
+ gap:20px;
+ flex-wrap:wrap;
+}
+
 .copyright{font-size:10px;color:var(--muted)}
 .footlinks{display:flex;gap:18px}
-.footlinks a{font-size:11px;color:#c9c5bb}
-.reveal{opacity:0;transform:translateY(20px);transition:.7s}
-.reveal.show{opacity:1;transform:none}
-.top{
-  position:fixed;right:20px;bottom:20px;display:none;
-  border:1px solid var(--line);background:#171a1f;color:var(--gold2);
-  border-radius:50%;width:42px;height:42px;z-index:10;
-}
-[dir=rtl] .eyebrow:before{display:none}
-[dir=rtl] .eyebrow:after{
-  content:"";display:inline-block;width:27px;height:1px;
-  background:var(--gold);margin-right:10px;vertical-align:middle;
-}
-[dir=rtl] .ticks span:before{margin:0 0 0 8px}
+.footlinks a{font-size:11px;color:#c9c0b0}
 
-@media(max-width:950px){
-  .links{gap:12px}
-  .links a{font-size:11px}
-  .cards{grid-template-columns:repeat(2,1fr)}
+.top{
+ position:fixed;
+ right:20px;
+ bottom:20px;
+ display:none;
+ width:44px;
+ height:44px;
+ border:1px solid var(--line);
+ border-radius:50%;
+ background:#17130d;
+ color:var(--gold2);
+ z-index:50;
+ cursor:pointer;
 }
+
+/* SCROLL ANIMATION */
+
+.reveal{
+ opacity:0;
+ transform:translateY(25px);
+ transition:opacity .8s ease,transform .8s ease;
+}
+
+.reveal.show{
+ opacity:1;
+ transform:translateY(0);
+}
+
+/* RTL */
+
+[dir=rtl] .eyebrow:before{display:none}
+
+[dir=rtl] .eyebrow:after{
+ content:"";
+ display:inline-block;
+ width:28px;
+ height:1px;
+ background:var(--gold);
+ margin-right:11px;
+ vertical-align:middle;
+}
+
+[dir=rtl] .ticks span:before{
+ margin:0 0 0 9px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1000px){
+ .links{gap:12px}
+ .links a{font-size:11px}
+ .cards{grid-template-columns:repeat(2,1fr)}
+ .hero-art{transform:scale(.9)}
+}
+
 @media(max-width:740px){
-  .nav{height:70px}
-  .menu{display:block}
-  .links{
-    display:none;position:absolute;top:70px;left:0;right:0;
-    background:#0d0f12;padding:15px 22px 22px;
-    border-bottom:1px solid var(--line);flex-direction:column;gap:0;
-  }
-  .links.open{display:flex}
-  .links a{padding:10px 0;font-size:13px}
-  .navright>.btn{display:none}
-  .hero{padding:55px 0 30px;min-height:0}
-  .heroGrid,.aboutgrid,.contactgrid{grid-template-columns:1fr}
-  .heroGrid{gap:8px}
-  .hero h1{font-size:46px}
-  .art{height:340px;transform:scale(.82);margin:-10px -25px}
-  .stats{margin-top:27px}
-  section.content{padding:68px 0}
-  .aboutgrid{gap:30px}
-  .visual{min-height:290px}
-  .cards{grid-template-columns:1fr}
-  .industries{grid-template-columns:repeat(2,1fr)}
-  .steps{grid-template-columns:1fr 1fr}
-  .projects{grid-template-columns:1fr}
-  .cta{padding:28px;display:block}
-  .cta .btn{margin-top:20px}
-  .contactgrid{gap:28px}
-  .row{grid-template-columns:1fr}
+ .nav{height:72px}
+ .brand{min-width:0}
+ .brand img{width:44px;height:44px}
+ .brand b{font-size:14px}
+
+ .menu{display:block}
+
+ .links{
+  display:none;
+  position:absolute;
+  top:72px;
+  left:0;
+  right:0;
+  padding:16px 23px 22px;
+  background:#090909;
+  border-bottom:1px solid var(--line);
+  flex-direction:column;
+  align-items:stretch;
+  gap:0;
+ }
+
+ .links.open{display:flex}
+ .links a{padding:11px 0;font-size:13px}
+ .navright>.btn{display:none}
+
+ .hero{min-height:0;padding:55px 0 35px}
+ .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
+ .hero-grid{gap:0}
+ .hero h1{font-size:clamp(39px,10vw,50px)}
+ .hero-art{height:340px;transform:none;margin-top:5px}
+ .logo-stage{width:225px;height:225px}
+ .orbit{width:280px;height:280px}
+ .orbit.two{width:325px;height:325px}
+ .orbit.three{width:245px;height:245px}
+ .float-one{right:0;top:15px}
+ .float-two{left:0;bottom:40px}
+ .float-three{right:0;bottom:0}
+
+ section.content{padding:70px 0}
+ .about-grid{gap:30px}
+ .visual{min-height:300px}
+ .cards{grid-template-columns:1fr}
+ .industries{grid-template-columns:repeat(2,1fr)}
+ .steps{grid-template-columns:1fr 1fr}
+ .projects{grid-template-columns:1fr}
+ .cta{padding:28px;display:block}
+ .cta .btn{margin-top:20px}
+ .contact-grid{gap:28px}
+ .row{grid-template-columns:1fr}
 }
+
 @media(max-width:420px){
-  .brand b{font-size:15px}
-  .mark{width:37px;height:37px}
-  .hero h1{font-size:40px}
-  .art{transform:scale(.7);margin:-30px -50px}
-  .ticks{grid-template-columns:1fr}
-  .steps{grid-template-columns:1fr}
-  .actions .btn{width:100%}
+ .brand b{font-size:13px}
+ .brand small{font-size:8px}
+ .hero-art{height:300px}
+ .logo-stage{width:195px;height:195px}
+ .orbit{width:250px;height:250px}
+ .orbit.two{width:290px;height:290px}
+ .float-card{padding:9px 11px}
+ .float-card b{font-size:10px}
+ .float-card small{font-size:8px}
+ .ticks{grid-template-columns:1fr}
+ .steps{grid-template-columns:1fr}
+ .actions .btn{width:100%}
 }
+
 @media(prefers-reduced-motion:reduce){
-  *{animation:none!important;scroll-behavior:auto!important;transition:none!important}
-  .reveal{opacity:1;transform:none}
+ *,*:before,*:after{
+  animation:none!important;
+  scroll-behavior:auto!important;
+  transition:none!important;
+ }
+ .reveal{opacity:1;transform:none}
 }
 </style>
 </head>
 
 <body>
+
 <div class="topline"></div>
 
 <header>
-<div class="wrap nav">
-<a class="brand" href="#home">
-  <span class="mark">K</span>
-  <span><b>KAFAS</b><small>SOFTWARE TRADING L.L.C.</small></span>
-</a>
+ <div class="wrap nav">
 
-<nav class="links" id="links">
-  <a href="#home" data-en="Home" data-ar="الرئيسية">Home</a>
-  <a href="#about" data-en="About" data-ar="من نحن">About</a>
-  <a href="#services" data-en="Solutions" data-ar="الحلول">Solutions</a>
-  <a href="#industries" data-en="Industries" data-ar="القطاعات">Industries</a>
-  <a href="#work" data-en="Our Work" data-ar="أعمالنا">Our Work</a>
-  <a href="#contact" data-en="Contact" data-ar="اتصل بنا">Contact</a>
-</nav>
+  <a class="brand" href="#home">
+   <img src="kafas-logo.png" alt="KAFAS Group KG Logo">
+   <span>
+    <b>KAFAS</b>
+    <small>SOFTWARE TRADING L.L.C.</small>
+   </span>
+  </a>
 
-<div class="navright">
-  <button class="lang" id="language">العربية</button>
-  <a class="btn gold" href="#contact" data-en="Let's Talk ↗" data-ar="تواصل معنا ↗">Let's Talk ↗</a>
-  <button class="menu" id="menu" aria-label="Open menu">☰</button>
-</div>
-</div>
+  <nav class="links" id="links">
+   <a href="#home" data-en="Home" data-ar="الرئيسية">Home</a>
+   <a href="#about" data-en="About" data-ar="من نحن">About</a>
+   <a href="#services" data-en="Solutions" data-ar="الحلول">Solutions</a>
+   <a href="#industries" data-en="Industries" data-ar="القطاعات">Industries</a>
+   <a href="#work" data-en="Our Work" data-ar="أعمالنا">Our Work</a>
+   <a href="#contact" data-en="Contact" data-ar="اتصل بنا">Contact</a>
+  </nav>
+
+  <div class="navright">
+   <button class="lang" id="language">العربية</button>
+   <a class="btn gold" href="#contact" data-en="Let's Talk ↗" data-ar="تواصل معنا ↗">Let's Talk ↗</a>
+   <button class="menu" id="menu" aria-label="Open menu">☰</button>
+  </div>
+
+ </div>
 </header>
 
 <main>
 
+<!-- HERO -->
+
 <section class="hero" id="home">
-<div class="wrap heroGrid">
 
-<div class="reveal">
-  <span class="eyebrow" data-en="Technology • Software • Innovation" data-ar="التكنولوجيا • البرمجيات • الابتكار">Technology • Software • Innovation</span>
+ <div class="hero-bg"></div>
+ <div class="hero-overlay"></div>
+ <canvas id="particles"></canvas>
 
-  <h1 data-en="Technology that moves your business <span class='shine'>forward.</span>" data-ar="تقنية تدفع أعمالك <span class='shine'>إلى الأمام.</span>">
+ <div class="wrap hero-grid">
+
+  <div class="reveal">
+
+   <span class="eyebrow"
+    data-en="Technology • Software • Innovation"
+    data-ar="التكنولوجيا • البرمجيات • الابتكار">
+    Technology • Software • Innovation
+   </span>
+
+   <h1
+    data-en="Technology that moves your business <span class='shine'>forward.</span>"
+    data-ar="تقنية تدفع أعمالك <span class='shine'>إلى الأمام.</span>">
     Technology that moves your business <span class="shine">forward.</span>
-  </h1>
+   </h1>
 
-  <p class="lead" data-en="KAFAS Software Trading L.L.C. brings together software solutions, technology services and practical digital expertise to help businesses work smarter and grow with confidence." data-ar="تجمع شركة كافاس لتجارة البرمجيات ذ.م.م بين الحلول البرمجية والخدمات التقنية والخبرة الرقمية العملية لمساعدة الشركات على العمل بذكاء أكبر والنمو بثقة.">
+   <p class="lead"
+    data-en="KAFAS Software Trading L.L.C. brings together software solutions, technology services and practical digital expertise to help businesses work smarter and grow with confidence."
+    data-ar="تجمع شركة كافاس لتجارة البرمجيات ذ.م.م بين الحلول البرمجية والخدمات التقنية والخبرة الرقمية العملية لمساعدة الشركات على العمل بذكاء أكبر والنمو بثقة.">
     KAFAS Software Trading L.L.C. brings together software solutions, technology services and practical digital expertise to help businesses work smarter and grow with confidence.
-  </p>
+   </p>
 
-  <div class="actions">
-    <a class="btn gold" href="#services" data-en="Explore Solutions ↗" data-ar="اكتشف الحلول ↗">Explore Solutions ↗</a>
-    <a class="btn outline" href="#about" data-en="Discover KAFAS" data-ar="اكتشف كافاس">Discover KAFAS</a>
+   <div class="actions">
+    <a class="btn gold" href="#services"
+     data-en="Explore Solutions ↗"
+     data-ar="اكتشف الحلول ↗">Explore Solutions ↗</a>
+
+    <a class="btn outline" href="#about"
+     data-en="Discover KAFAS"
+     data-ar="اكتشف كافاس">Discover KAFAS</a>
+   </div>
+
+   <div class="stats">
+    <div>
+     <b>SOFTWARE</b>
+     <span data-en="Solutions & Trading" data-ar="الحلول والتجارة">Solutions & Trading</span>
+    </div>
+    <div>
+     <b>IT SERVICES</b>
+     <span data-en="Technology support" data-ar="الدعم التقني">Technology support</span>
+    </div>
+    <div>
+     <b>DIGITAL</b>
+     <span data-en="Business transformation" data-ar="التحول الرقمي">Business transformation</span>
+    </div>
+   </div>
+
   </div>
 
-  <div class="stats">
-    <div><b>SOFTWARE</b><span data-en="Solutions & Trading" data-ar="الحلول والتجارة">Solutions & Trading</span></div>
-    <div><b>IT SERVICES</b><span data-en="Technology support" data-ar="الدعم التقني">Technology support</span></div>
-    <div><b>DIGITAL</b><span data-en="Business transformation" data-ar="التحول الرقمي">Business transformation</span></div>
+  <div class="hero-art reveal">
+
+   <div class="orbit"></div>
+   <div class="orbit two"></div>
+   <div class="orbit three"></div>
+
+   <div class="logo-stage">
+    <img src="kafas-logo.png" alt="KAFAS KG Emblem">
+   </div>
+
+   <i class="light-dot dot-one"></i>
+   <i class="light-dot dot-two"></i>
+   <i class="light-dot dot-three"></i>
+
+   <div class="float-card float-one">
+    <small>SMARTER SYSTEMS</small>
+    <b>Technology • 01</b>
+   </div>
+
+   <div class="float-card float-two">
+    <small>BUSINESS READY</small>
+    <b>Solutions • 02</b>
+   </div>
+
+   <div class="float-card float-three">
+    <small>BUILT FOR WHAT'S NEXT</small>
+    <b>Innovation • 03</b>
+   </div>
+
   </div>
-</div>
 
-<div class="art reveal" aria-label="Abstract 3D technology artwork">
-  <div class="orb"></div>
-  <div class="orbit"></div>
-  <div class="orbit two"></div>
-  <div class="globe"></div>
-  <div class="floatcard f1"><small>SMARTER SYSTEMS</small><b>Technology • 01</b></div>
-  <div class="floatcard f2"><small>BUSINESS READY</small><b>Solutions • 02</b></div>
-  <div class="floatcard f3"><small>BUILT FOR WHAT'S NEXT</small><b>Innovation • 03</b></div>
-</div>
-
-</div>
+ </div>
 </section>
 
+<!-- ABOUT -->
+
 <section class="content" id="about">
-<div class="wrap aboutgrid">
+ <div class="wrap about-grid">
 
-<div class="visual reveal">
-  <div class="visualinner">
-    <div class="mark">K</div>
-    <h3>KAFAS SOFTWARE</h3>
-    <small>TRADING L.L.C.</small>
+  <div class="visual reveal">
+   <img src="kafas-logo.png" alt="KAFAS Group Logo">
   </div>
-</div>
 
-<div class="about reveal">
-  <span class="eyebrow" data-en="Who We Are" data-ar="من نحن">Who We Are</span>
-  <h2 data-en="A technology partner for a <span class='shine'>changing world.</span>" data-ar="شريك تقني لعالم <span class='shine'>متغير.</span>">
+  <div class="about reveal">
+
+   <span class="eyebrow" data-en="Who We Are" data-ar="من نحن">Who We Are</span>
+
+   <h2
+    data-en="A technology partner for a <span class='shine'>changing world.</span>"
+    data-ar="شريك تقني لعالم <span class='shine'>متغير.</span>">
     A technology partner for a <span class="shine">changing world.</span>
-  </h2>
-  <p data-en="KAFAS Software Trading L.L.C. is positioned to support organisations with software, IT products and technology-focused services. We believe the right technology should make everyday work simpler, more connected and more effective." data-ar="تسعى شركة كافاس لتجارة البرمجيات ذ.م.م إلى دعم المؤسسات من خلال البرمجيات ومنتجات تقنية المعلومات والخدمات التقنية. نؤمن بأن التقنية المناسبة تجعل العمل اليومي أكثر سهولة وترابطاً وفعالية.">
+   </h2>
+
+   <p
+    data-en="KAFAS Software Trading L.L.C. is positioned to support organisations with software, IT products and technology-focused services. We believe the right technology should make everyday work simpler, more connected and more effective."
+    data-ar="تسعى شركة كافاس لتجارة البرمجيات ذ.م.م إلى دعم المؤسسات من خلال البرمجيات ومنتجات تقنية المعلومات والخدمات التقنية. نؤمن بأن التقنية المناسبة تجعل العمل اليومي أكثر سهولة وترابطاً وفعالية.">
     KAFAS Software Trading L.L.C. is positioned to support organisations with software, IT products and technology-focused services. We believe the right technology should make everyday work simpler, more connected and more effective.
-  </p>
-  <p data-en="Our approach is built around understanding business needs, recommending practical solutions and delivering a professional customer experience from the first conversation onward." data-ar="يرتكز نهجنا على فهم احتياجات الأعمال واقتراح حلول عملية وتقديم تجربة عملاء احترافية منذ أول تواصل.">
+   </p>
+
+   <p
+    data-en="Our approach is built around understanding business needs, recommending practical solutions and delivering a professional customer experience from the first conversation onward."
+    data-ar="يرتكز نهجنا على فهم احتياجات الأعمال واقتراح حلول عملية وتقديم تجربة عملاء احترافية منذ أول تواصل.">
     Our approach is built around understanding business needs, recommending practical solutions and delivering a professional customer experience from the first conversation onward.
-  </p>
-  <div class="ticks">
+   </p>
+
+   <div class="ticks">
     <span data-en="Business-focused approach" data-ar="نهج يركز على الأعمال">Business-focused approach</span>
     <span data-en="Practical technology choices" data-ar="خيارات تقنية عملية">Practical technology choices</span>
     <span data-en="Professional communication" data-ar="تواصل احترافي">Professional communication</span>
     <span data-en="Solutions for evolving needs" data-ar="حلول للاحتياجات المتطورة">Solutions for evolving needs</span>
-  </div>
-  <a class="btn outline" href="#contact" data-en="Talk to our team ↗" data-ar="تحدث إلى فريقنا ↗">Talk to our team ↗</a>
-</div>
+   </div>
 
-</div>
+   <a class="btn outline" href="#contact"
+    data-en="Talk to our team ↗"
+    data-ar="تحدث إلى فريقنا ↗">Talk to our team ↗</a>
+
+  </div>
+ </div>
 </section>
 
+<!-- SERVICES -->
+
 <section class="content softbg" id="services">
-<div class="wrap">
+ <div class="wrap">
 
-<div class="head center reveal">
-  <span class="eyebrow" data-en="What We Do" data-ar="ماذا نقدم">What We Do</span>
-  <h2 data-en="Technology solutions for <span class='shine'>real business needs.</span>" data-ar="حلول تقنية <span class='shine'>لاحتياجات الأعمال.</span>">
+  <div class="head center reveal">
+   <span class="eyebrow" data-en="What We Do" data-ar="ماذا نقدم">What We Do</span>
+
+   <h2
+    data-en="Technology solutions for <span class='shine'>real business needs.</span>"
+    data-ar="حلول تقنية <span class='shine'>لاحتياجات الأعمال.</span>">
     Technology solutions for <span class="shine">real business needs.</span>
-  </h2>
-  <p data-en="A considered range of software and IT capabilities. Final service availability and product brands can be confirmed with the KAFAS team." data-ar="مجموعة من قدرات البرمجيات وتقنية المعلومات. يمكن تأكيد الخدمات والعلامات التجارية المتاحة مع فريق كافاس.">
-    A considered range of software and IT capabilities. Final service availability and product brands can be confirmed with the KAFAS team.
-  </p>
-</div>
+   </h2>
 
-<div class="cards">
-  <article class="card reveal">
+   <p
+    data-en="A considered range of software and IT capabilities. Final service availability and product brands can be confirmed with the KAFAS team."
+    data-ar="مجموعة من قدرات البرمجيات وتقنية المعلومات. يمكن تأكيد الخدمات والعلامات التجارية المتاحة مع فريق كافاس.">
+    A considered range of software and IT capabilities. Final service availability and product brands can be confirmed with the KAFAS team.
+   </p>
+  </div>
+
+  <div class="cards">
+
+   <article class="card reveal">
     <div class="ico">⌘</div>
     <h3 data-en="Software Trading & Licensing" data-ar="تجارة البرمجيات والتراخيص">Software Trading & Licensing</h3>
     <p data-en="Software products, licensing options and business applications selected around operational requirements." data-ar="منتجات برمجية وخيارات ترخيص وتطبيقات أعمال يتم اختيارها وفقاً لمتطلبات التشغيل.">Software products, licensing options and business applications selected around operational requirements.</p>
-  </article>
+   </article>
 
-  <article class="card reveal">
+   <article class="card reveal">
     <div class="ico">▣</div>
     <h3 data-en="Custom Software Solutions" data-ar="حلول برمجية مخصصة">Custom Software Solutions</h3>
     <p data-en="Purpose-led software concepts and tailored digital systems designed around specific business workflows." data-ar="أنظمة رقمية مصممة خصيصاً لتناسب سير العمل واحتياجات الشركات.">Purpose-led software concepts and tailored digital systems designed around specific business workflows.</p>
-  </article>
+   </article>
 
-  <article class="card reveal">
+   <article class="card reveal">
     <div class="ico">⌁</div>
     <h3 data-en="Web & Mobile Applications" data-ar="تطبيقات الويب والهواتف">Web & Mobile Applications</h3>
     <p data-en="Modern web experiences and mobile application solutions that help organisations serve customers and teams." data-ar="تجارب ويب حديثة وحلول تطبيقات الهاتف لخدمة العملاء والفرق.">Modern web experiences and mobile application solutions that help organisations serve customers and teams.</p>
-  </article>
+   </article>
 
-  <article class="card reveal">
+   <article class="card reveal">
     <div class="ico">◈</div>
     <h3 data-en="IT Infrastructure & Cloud" data-ar="البنية التحتية والسحابة">IT Infrastructure & Cloud</h3>
     <p data-en="Technology infrastructure planning, cloud solutions and connected systems to support dependable operations." data-ar="تخطيط البنية التحتية التقنية والحلول السحابية والأنظمة المترابطة لدعم العمليات.">Technology infrastructure planning, cloud solutions and connected systems to support dependable operations.</p>
-  </article>
+   </article>
 
-  <article class="card reveal">
+   <article class="card reveal">
     <div class="ico">⌬</div>
     <h3 data-en="IT Consulting & Digital Transformation" data-ar="استشارات تقنية وتحول رقمي">IT Consulting & Digital Transformation</h3>
     <p data-en="Practical guidance to assess technology needs, improve processes and plan digital initiatives." data-ar="إرشاد عملي لتقييم الاحتياجات التقنية وتحسين العمليات والتخطيط للمبادرات الرقمية.">Practical guidance to assess technology needs, improve processes and plan digital initiatives.</p>
-  </article>
+   </article>
 
-  <article class="card reveal">
+   <article class="card reveal">
     <div class="ico">◎</div>
     <h3 data-en="Technical Support & Maintenance" data-ar="الدعم الفني والصيانة">Technical Support & Maintenance</h3>
     <p data-en="Technical assistance and maintenance options to help keep business technology operating smoothly." data-ar="مساعدة تقنية وخيارات صيانة للمساعدة في تشغيل تقنيات الأعمال بسلاسة.">Technical assistance and maintenance options to help keep business technology operating smoothly.</p>
-  </article>
-</div>
-</div>
+   </article>
+
+  </div>
+ </div>
 </section>
+
+<!-- INDUSTRIES -->
 
 <section class="content" id="industries">
-<div class="wrap">
-<div class="head center reveal">
-  <span class="eyebrow" data-en="Industries We Can Support" data-ar="القطاعات التي يمكننا دعمها">Industries We Can Support</span>
-  <h2 data-en="Technology across <span class='shine'>everyday industries.</span>" data-ar="تقنية تدعم <span class='shine'>مختلف القطاعات.</span>">
-    Technology across <span class="shine">everyday industries.</span>
-  </h2>
-  <p data-en="Flexible technology capabilities can be adapted to different business environments." data-ar="يمكن تكييف القدرات التقنية لتناسب بيئات الأعمال المختلفة.">Flexible technology capabilities can be adapted to different business environments.</p>
-</div>
+ <div class="wrap">
 
-<div class="industries">
-  <div class="industry reveal"><span>▥</span><b data-en="Retail & Trading" data-ar="التجزئة والتجارة">Retail & Trading</b></div>
-  <div class="industry reveal"><span>⌂</span><b data-en="Real Estate" data-ar="العقارات">Real Estate</b></div>
-  <div class="industry reveal"><span>✚</span><b data-en="Healthcare" data-ar="الرعاية الصحية">Healthcare</b></div>
-  <div class="industry reveal"><span>▤</span><b data-en="Education" data-ar="التعليم">Education</b></div>
-  <div class="industry reveal"><span>▦</span><b data-en="Professional Services" data-ar="الخدمات المهنية">Professional Services</b></div>
-  <div class="industry reveal"><span>⌁</span><b data-en="Hospitality" data-ar="الضيافة">Hospitality</b></div>
-  <div class="industry reveal"><span>▧</span><b data-en="Logistics" data-ar="الخدمات اللوجستية">Logistics</b></div>
-  <div class="industry reveal"><span>◫</span><b data-en="Growing Businesses" data-ar="الشركات النامية">Growing Businesses</b></div>
-</div>
-</div>
+  <div class="head center reveal">
+   <span class="eyebrow" data-en="Industries We Can Support" data-ar="القطاعات التي يمكننا دعمها">Industries We Can Support</span>
+
+   <h2
+    data-en="Technology across <span class='shine'>everyday industries.</span>"
+    data-ar="تقنية تدعم <span class='shine'>مختلف القطاعات.</span>">
+    Technology across <span class="shine">everyday industries.</span>
+   </h2>
+
+   <p data-en="Flexible technology capabilities can be adapted to different business environments." data-ar="يمكن تكييف القدرات التقنية لتناسب بيئات الأعمال المختلفة.">
+    Flexible technology capabilities can be adapted to different business environments.
+   </p>
+  </div>
+
+  <div class="industries">
+   <div class="industry reveal"><span>▥</span><b data-en="Retail & Trading" data-ar="التجزئة والتجارة">Retail & Trading</b></div>
+   <div class="industry reveal"><span>⌂</span><b data-en="Real Estate" data-ar="العقارات">Real Estate</b></div>
+   <div class="industry reveal"><span>✚</span><b data-en="Healthcare" data-ar="الرعاية الصحية">Healthcare</b></div>
+   <div class="industry reveal"><span>▤</span><b data-en="Education" data-ar="التعليم">Education</b></div>
+   <div class="industry reveal"><span>▦</span><b data-en="Professional Services" data-ar="الخدمات المهنية">Professional Services</b></div>
+   <div class="industry reveal"><span>⌁</span><b data-en="Hospitality" data-ar="الضيافة">Hospitality</b></div>
+   <div class="industry reveal"><span>▧</span><b data-en="Logistics" data-ar="الخدمات اللوجستية">Logistics</b></div>
+   <div class="industry reveal"><span>◫</span><b data-en="Growing Businesses" data-ar="الشركات النامية">Growing Businesses</b></div>
+  </div>
+
+ </div>
 </section>
+
+<!-- APPROACH -->
 
 <section class="content softbg" id="approach">
-<div class="wrap">
-<div class="head reveal">
-  <span class="eyebrow" data-en="How We Work" data-ar="كيف نعمل">How We Work</span>
-  <h2 data-en="A clear path from <span class='shine'>need to solution.</span>" data-ar="خطوات واضحة من <span class='shine'>الاحتياج إلى الحل.</span>">
+ <div class="wrap">
+
+  <div class="head reveal">
+   <span class="eyebrow" data-en="How We Work" data-ar="كيف نعمل">How We Work</span>
+
+   <h2
+    data-en="A clear path from <span class='shine'>need to solution.</span>"
+    data-ar="خطوات واضحة من <span class='shine'>الاحتياج إلى الحل.</span>">
     A clear path from <span class="shine">need to solution.</span>
-  </h2>
-</div>
-<div class="steps">
-  <div class="step reveal"><h3 data-en="Understand" data-ar="نفهم">Understand</h3><p data-en="We listen to your goals, challenges and requirements." data-ar="نستمع إلى أهدافك وتحدياتك ومتطلباتك.">We listen to your goals, challenges and requirements.</p></div>
-  <div class="step reveal"><h3 data-en="Recommend" data-ar="نقترح">Recommend</h3><p data-en="We identify suitable options and explain the approach." data-ar="نحدد الخيارات المناسبة ونشرح النهج المقترح.">We identify suitable options and explain the approach.</p></div>
-  <div class="step reveal"><h3 data-en="Deliver" data-ar="ننّفذ">Deliver</h3><p data-en="We coordinate the agreed solution and its delivery." data-ar="ننسق تنفيذ الحل المتفق عليه وتسليمه.">We coordinate the agreed solution and its delivery.</p></div>
-  <div class="step reveal"><h3 data-en="Support" data-ar="ندعم">Support</h3><p data-en="We discuss ongoing support based on your needs." data-ar="نناقش الدعم المستمر وفقاً لاحتياجاتك.">We discuss ongoing support based on your needs.</p></div>
-</div>
-</div>
+   </h2>
+  </div>
+
+  <div class="steps">
+   <div class="step reveal">
+    <h3 data-en="Understand" data-ar="نفهم">Understand</h3>
+    <p data-en="We listen to your goals, challenges and requirements." data-ar="نستمع إلى أهدافك وتحدياتك ومتطلباتك.">We listen to your goals, challenges and requirements.</p>
+   </div>
+
+   <div class="step reveal">
+    <h3 data-en="Recommend" data-ar="نقترح">Recommend</h3>
+    <p data-en="We identify suitable options and explain the approach." data-ar="نحدد الخيارات المناسبة ونشرح النهج المقترح.">We identify suitable options and explain the approach.</p>
+   </div>
+
+   <div class="step reveal">
+    <h3 data-en="Deliver" data-ar="ننّفذ">Deliver</h3>
+    <p data-en="We coordinate the agreed solution and its delivery." data-ar="ننسق تنفيذ الحل المتفق عليه وتسليمه.">We coordinate the agreed solution and its delivery.</p>
+   </div>
+
+   <div class="step reveal">
+    <h3 data-en="Support" data-ar="ندعم">Support</h3>
+    <p data-en="We discuss ongoing support based on your needs." data-ar="نناقش الدعم المستمر وفقاً لاحتياجاتك.">We discuss ongoing support based on your needs.</p>
+   </div>
+  </div>
+
+ </div>
 </section>
 
+<!-- CAPABILITIES -->
+
 <section class="content" id="work">
-<div class="wrap">
-<div class="head center reveal">
-  <span class="eyebrow" data-en="Capabilities" data-ar="قدراتنا">Capabilities</span>
-  <h2 data-en="Built around the way <span class='shine'>business works.</span>" data-ar="مصممة وفق طريقة <span class='shine'>عمل الشركات.</span>">
+ <div class="wrap">
+
+  <div class="head center reveal">
+   <span class="eyebrow" data-en="Capabilities" data-ar="قدراتنا">Capabilities</span>
+
+   <h2
+    data-en="Built around the way <span class='shine'>business works.</span>"
+    data-ar="مصممة وفق طريقة <span class='shine'>عمل الشركات.</span>">
     Built around the way <span class="shine">business works.</span>
-  </h2>
-  <p data-en="Illustrative solution areas. Specific case studies, customer logos and completed project details will be added after client approval." data-ar="مجالات توضيحية للحلول. ستتم إضافة دراسات الحالة وشعارات العملاء وتفاصيل المشاريع بعد موافقة العميل.">
+   </h2>
+
+   <p
+    data-en="Illustrative solution areas. Specific case studies, customer logos and completed project details will be added after client approval."
+    data-ar="مجالات توضيحية للحلول. ستتم إضافة دراسات الحالة وشعارات العملاء وتفاصيل المشاريع بعد موافقة العميل.">
     Illustrative solution areas. Specific case studies, customer logos and completed project details will be added after client approval.
-  </p>
-</div>
-<div class="projects">
-  <article class="project reveal">
+   </p>
+  </div>
+
+  <div class="projects">
+
+   <article class="project reveal">
     <small>01 / BUSINESS SYSTEMS</small>
     <h3 data-en="Connected Business Operations" data-ar="عمليات أعمال مترابطة">Connected Business Operations</h3>
     <p data-en="Digital tools and software workflows that can bring information, teams and processes closer together." data-ar="أدوات رقمية وسير عمل برمجي يربط المعلومات والفرق والعمليات معاً.">Digital tools and software workflows that can bring information, teams and processes closer together.</p>
-  </article>
-  <article class="project reveal">
+   </article>
+
+   <article class="project reveal">
     <small>02 / DIGITAL EXPERIENCES</small>
     <h3 data-en="Web & Customer Experiences" data-ar="تجارب الويب والعملاء">Web & Customer Experiences</h3>
     <p data-en="Modern digital touchpoints that help businesses present services and communicate with customers." data-ar="نقاط تواصل رقمية حديثة تساعد الشركات على عرض خدماتها والتواصل مع العملاء.">Modern digital touchpoints that help businesses present services and communicate with customers.</p>
-  </article>
-</div>
-</div>
+   </article>
+
+  </div>
+ </div>
 </section>
+
+<!-- CTA -->
 
 <section class="content">
-<div class="wrap">
-<div class="cta reveal">
-  <div>
+ <div class="wrap">
+  <div class="cta reveal">
+
+   <div>
     <span class="eyebrow" data-en="Let's Build What's Next" data-ar="لنصنع الخطوة التالية">Let's Build What's Next</span>
+
     <h2 data-en="Have a technology requirement?" data-ar="هل لديك متطلب تقني؟">Have a technology requirement?</h2>
-    <p data-en="Tell us what your business needs. Let's explore the right way forward." data-ar="أخبرنا بما يحتاجه عملك. دعنا نستكشف الطريق المناسب.">Tell us what your business needs. Let's explore the right way forward.</p>
+
+    <p data-en="Tell us what your business needs. Let's explore the right way forward." data-ar="أخبرنا بما يحتاجه عملك. دعنا نستكشف الطريق المناسب.">
+     Tell us what your business needs. Let's explore the right way forward.
+    </p>
+   </div>
+
+   <a class="btn gold" href="#contact"
+    data-en="Start a Conversation ↗"
+    data-ar="ابدأ المحادثة ↗">Start a Conversation ↗</a>
+
   </div>
-  <a class="btn gold" href="#contact" data-en="Start a Conversation ↗" data-ar="ابدأ المحادثة ↗">Start a Conversation ↗</a>
-</div>
-</div>
+ </div>
 </section>
 
+<!-- CONTACT -->
+
 <section class="content" id="contact">
-<div class="wrap contactgrid">
+ <div class="wrap contact-grid">
 
-<div class="contact reveal">
-  <span class="eyebrow" data-en="Contact KAFAS" data-ar="تواصل مع كافاس">Contact KAFAS</span>
-  <h2 data-en="Let's talk about <span class='shine'>your next move.</span>" data-ar="لنتحدث عن <span class='shine'>خطوتك التالية.</span>">
+  <div class="contact reveal">
+
+   <span class="eyebrow" data-en="Contact KAFAS" data-ar="تواصل مع كافاس">Contact KAFAS</span>
+
+   <h2
+    data-en="Let's talk about <span class='shine'>your next move.</span>"
+    data-ar="لنتحدث عن <span class='shine'>خطوتك التالية.</span>">
     Let's talk about <span class="shine">your next move.</span>
-  </h2>
-  <p data-en="Share a little about your requirement and our team can follow up with you." data-ar="شاركنا بعض التفاصيل حول متطلباتك وسيقوم فريقنا بمتابعة طلبك.">Share a little about your requirement and our team can follow up with you.</p>
+   </h2>
 
-  <div class="contactline">
+   <p data-en="Share a little about your requirement and our team can follow up with you." data-ar="شاركنا بعض التفاصيل حول متطلباتك وسيقوم فريقنا بمتابعة طلبك.">
+    Share a little about your requirement and our team can follow up with you.
+   </p>
+
+   <div class="contact-line">
     <div class="ico">✉</div>
     <div>
-      <small data-en="General enquiries" data-ar="الاستفسارات العامة">General enquiries</small>
-      <b><a href="mailto:info@kafassoftware.in">info@kafassoftware.in</a></b>
+     <small data-en="General enquiries" data-ar="الاستفسارات العامة">General enquiries</small>
+     <b><a href="mailto:info@kafassoftware.in">info@kafassoftware.in</a></b>
     </div>
-  </div>
+   </div>
 
-  <div class="contactline">
-    <div class="ico">✉</div>
+   <div class="contact-line">
+    <div class="ico">☎</div>
     <div>
-      <small data-en="Client contact email" data-ar="البريد الإلكتروني للعميل">Client contact email</small>
-      <b><a href="mailto:mohammedhasim@kafassoftware.com">mohammedhasim@kafassoftware.com</a></b>
+     <small data-en="Telephone" data-ar="الهاتف">Telephone</small>
+     <b><a href="tel:+97145466465">+971 4 546 6465</a></b>
     </div>
+   </div>
+
+   <div class="contact-line">
+    <div class="ico">⌖</div>
+    <div>
+     <small data-en="Postal address" data-ar="العنوان البريدي">Postal address</small>
+     <b>PO Box 183834, Dubai, UAE</b>
+    </div>
+   </div>
+
   </div>
 
-  <p style="font-size:10px;margin-top:20px" data-en="Company location and telephone details will be added after confirmation." data-ar="ستتم إضافة موقع الشركة وأرقام الهاتف بعد التأكيد.">
-    Company location and telephone details will be added after confirmation.
-  </p>
-</div>
+  <form id="contactForm">
 
-<form id="contactForm">
-  <div class="row">
+   <div class="row">
     <div class="field">
-      <label for="name" data-en="Your name *" data-ar="الاسم *">Your name *</label>
-      <input id="name" name="name" required placeholder="Full name">
+     <label for="name" data-en="Your name *" data-ar="الاسم *">Your name *</label>
+     <input id="name" name="name" required placeholder="Full name">
     </div>
-    <div class="field">
-      <label for="email" data-en="Email address *" data-ar="البريد الإلكتروني *">Email address *</label>
-      <input id="email" name="email" type="email" required placeholder="you@example.com">
-    </div>
-  </div>
 
-  <div class="row">
     <div class="field">
-      <label for="phone" data-en="Phone / WhatsApp" data-ar="الهاتف / واتساب">Phone / WhatsApp</label>
-      <input id="phone" name="phone" type="tel" placeholder="+971">
+     <label for="email" data-en="Email address *" data-ar="البريد الإلكتروني *">Email address *</label>
+     <input id="email" name="email" type="email" required placeholder="you@example.com">
     </div>
-    <div class="field">
-      <label for="service" data-en="What do you need?" data-ar="ما الخدمة التي تحتاجها؟">What do you need?</label>
-      <select id="service" name="service">
-        <option>Software Trading & Licensing</option>
-        <option>Custom Software Solutions</option>
-        <option>Web & Mobile Applications</option>
-        <option>IT Infrastructure & Cloud</option>
-        <option>IT Consulting</option>
-        <option>Other enquiry</option>
-      </select>
-    </div>
-  </div>
+   </div>
 
-  <div class="field">
+   <div class="row">
+    <div class="field">
+     <label for="phone" data-en="Phone / WhatsApp" data-ar="الهاتف / واتساب">Phone / WhatsApp</label>
+     <input id="phone" name="phone" type="tel" placeholder="+971">
+    </div>
+
+    <div class="field">
+     <label for="service" data-en="What do you need?" data-ar="ما الخدمة التي تحتاجها؟">What do you need?</label>
+
+     <select id="service" name="service">
+      <option>Software Trading & Licensing</option>
+      <option>Custom Software Solutions</option>
+      <option>Web & Mobile Applications</option>
+      <option>IT Infrastructure & Cloud</option>
+      <option>IT Consulting</option>
+      <option>Other enquiry</option>
+     </select>
+    </div>
+   </div>
+
+   <div class="field">
     <label for="message" data-en="Tell us about your requirement *" data-ar="أخبرنا عن متطلباتك *">Tell us about your requirement *</label>
     <textarea id="message" name="message" required placeholder="How can KAFAS help your business?"></textarea>
-  </div>
+   </div>
 
-  <button class="btn gold" type="submit" style="width:100%" data-en="Prepare Email Enquiry ↗" data-ar="إعداد رسالة الاستفسار ↗">Prepare Email Enquiry ↗</button>
+   <button class="btn gold" type="submit" style="width:100%"
+    data-en="Prepare Email Enquiry ↗"
+    data-ar="إعداد رسالة الاستفسار ↗">
+    Prepare Email Enquiry ↗
+   </button>
 
-  <p class="note" data-en="Preview version: this opens your email application with the enquiry prepared. Online form delivery can be connected after hosting is arranged." data-ar="نسخة معاينة: تفتح تطبيق البريد الإلكتروني مع تجهيز الاستفسار. يمكن ربط إرسال النماذج عبر الإنترنت بعد إعداد الاستضافة.">
-    Preview version: this opens your email application with the enquiry prepared. Online form delivery can be connected after hosting is arranged.
-  </p>
-</form>
+   <p class="note"
+    data-en="This form prepares an email in your email application. It does not store enquiries online."
+    data-ar="يقوم هذا النموذج بإعداد رسالة في تطبيق البريد الإلكتروني ولا يخزن الاستفسارات عبر الإنترنت.">
+    This form prepares an email in your email application. It does not store enquiries online.
+   </p>
 
-</div>
+  </form>
+
+ </div>
 </section>
 
 </main>
 
+<!-- FOOTER -->
+
 <footer>
-<div class="wrap foot">
+ <div class="wrap foot">
+
   <a class="brand" href="#home">
-    <span class="mark">K</span>
-    <span><b>KAFAS</b><small>SOFTWARE TRADING L.L.C.</small></span>
+   <img src="kafas-logo.png" alt="KAFAS Group KG Logo">
+   <span>
+    <b>KAFAS</b>
+    <small>SOFTWARE TRADING L.L.C.</small>
+   </span>
   </a>
-  <div class="copyright">© <span id="year"></span> KAFAS Software Trading L.L.C. <span data-en="All rights reserved." data-ar="جميع الحقوق محفوظة.">All rights reserved.</span></div>
-  <div class="footlinks">
-    <a href="#about" data-en="About" data-ar="من نحن">About</a>
-    <a href="#services" data-en="Solutions" data-ar="الحلول">Solutions</a>
-    <a href="#contact" data-en="Contact" data-ar="اتصل بنا">Contact</a>
-    <a href="mailto:info@kafassoftware.in">Email</a>
+
+  <div class="copyright">
+   © <span id="year"></span> KAFAS Software Trading L.L.C.
+   <span data-en="All rights reserved." data-ar="جميع الحقوق محفوظة.">All rights reserved.</span>
   </div>
-</div>
+
+  <div class="footlinks">
+   <a href="#about" data-en="About" data-ar="من نحن">About</a>
+   <a href="#services" data-en="Solutions" data-ar="الحلول">Solutions</a>
+   <a href="#contact" data-en="Contact" data-ar="اتصل بنا">Contact</a>
+   <a href="mailto:info@kafassoftware.in">Email</a>
+  </div>
+
+ </div>
 </footer>
 
 <button class="top" id="top" aria-label="Back to top">↑</button>
 
 <script>
-const nav=document.getElementById('links');
+/* MOBILE MENU */
 
-document.getElementById('menu').addEventListener('click',()=>{
-  nav.classList.toggle('open');
+const nav=document.getElementById("links");
+const menuButton=document.getElementById("menu");
+
+menuButton.addEventListener("click",()=>{
+ nav.classList.toggle("open");
 });
 
-nav.querySelectorAll('a').forEach(a=>{
-  a.addEventListener('click',()=>nav.classList.remove('open'));
+nav.querySelectorAll("a").forEach(link=>{
+ link.addEventListener("click",()=>{
+  nav.classList.remove("open");
+ });
 });
 
-let lang='en';
+/* ENGLISH / ARABIC LANGUAGE */
 
-document.getElementById('language').addEventListener('click',()=>{
-  lang=lang==='en'?'ar':'en';
-  document.documentElement.lang=lang;
-  document.documentElement.dir=lang==='ar'?'rtl':'ltr';
+let currentLanguage="en";
 
-  document.getElementById('language').textContent=
-    lang==='en'?'العربية':'English';
+document.getElementById("language").addEventListener("click",()=>{
+ currentLanguage=currentLanguage==="en"?"ar":"en";
 
-  document.querySelectorAll('[data-en]').forEach(el=>{
-    const value=el.getAttribute('data-'+lang);
-    if(value!==null)el.innerHTML=value;
-  });
+ document.documentElement.lang=currentLanguage;
+ document.documentElement.dir=currentLanguage==="ar"?"rtl":"ltr";
+
+ document.getElementById("language").textContent=
+  currentLanguage==="en"?"العربية":"English";
+
+ document.querySelectorAll("[data-en]").forEach(element=>{
+  const translated=element.getAttribute("data-"+currentLanguage);
+
+  if(translated!==null){
+   element.innerHTML=translated;
+  }
+ });
 });
 
-document.getElementById('year').textContent=new Date().getFullYear();
+/* CURRENT YEAR */
 
-const observer=new IntersectionObserver(entries=>{
+document.getElementById("year").textContent=
+ new Date().getFullYear();
+
+/* SCROLL REVEAL */
+
+if("IntersectionObserver" in window){
+
+ const observer=new IntersectionObserver(entries=>{
   entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add('show');
-      observer.unobserve(entry.target);
-    }
+   if(entry.isIntersecting){
+    entry.target.classList.add("show");
+    observer.unobserve(entry.target);
+   }
   });
-},{threshold:.12});
+ },{threshold:.12});
 
-document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+ document.querySelectorAll(".reveal").forEach(element=>{
+  observer.observe(element);
+ });
 
-const topBtn=document.getElementById('top');
+}else{
+ document.querySelectorAll(".reveal").forEach(element=>{
+  element.classList.add("show");
+ });
+}
 
-window.addEventListener('scroll',()=>{
-  topBtn.style.display=window.scrollY>450?'block':'none';
+/* BACK TO TOP */
+
+const topButton=document.getElementById("top");
+
+window.addEventListener("scroll",()=>{
+ topButton.style.display=window.scrollY>450?"block":"none";
 });
 
-topBtn.addEventListener('click',()=>{
-  window.scrollTo({top:0,behavior:'smooth'});
+topButton.addEventListener("click",()=>{
+ window.scrollTo({top:0,behavior:"smooth"});
 });
 
-document.getElementById('contactForm').addEventListener('submit',event=>{
-  event.preventDefault();
+/* CONTACT FORM - EMAIL PREPARATION */
 
-  const form=event.currentTarget;
+document.getElementById("contactForm").addEventListener("submit",event=>{
+ event.preventDefault();
 
-  const subject=encodeURIComponent(
-    'Website enquiry - KAFAS Software Trading L.L.C.'
+ const form=event.currentTarget;
+
+ const subject=encodeURIComponent(
+  "Website enquiry - KAFAS Software Trading L.L.C."
+ );
+
+ const body=encodeURIComponent(
+  "Name: "+form.elements["name"].value+
+  "\nEmail: "+form.elements["email"].value+
+  "\nPhone: "+form.elements["phone"].value+
+  "\nService: "+form.elements["service"].value+
+  "\n\nMessage:\n"+form.elements["message"].value
+ );
+
+ window.location.href=
+  "mailto:info@kafassoftware.in"+
+  "?subject="+subject+
+  "&body="+body;
+});
+
+/* GOLD PARTICLE ANIMATION */
+
+(function(){
+
+ const canvas=document.getElementById("particles");
+ const ctx=canvas.getContext("2d");
+
+ if(!ctx)return;
+
+ let width=0;
+ let height=0;
+ let particles=[];
+ let animationFrame;
+
+ function resize(){
+
+  const rect=canvas.getBoundingClientRect();
+
+  width=canvas.width=Math.floor(rect.width*window.devicePixelRatio);
+  height=canvas.height=Math.floor(rect.height*window.devicePixelRatio);
+
+  ctx.setTransform(
+   window.devicePixelRatio,0,0,
+   window.devicePixelRatio,0,0
   );
 
-  const body=encodeURIComponent(
-    'Name: '+form.name.value+
-    '\nEmail: '+form.email.value+
-    '\nPhone: '+form.phone.value+
-    '\nService: '+form.service.value+
-    '\n\nMessage:\n'+form.message.value
+  width=rect.width;
+  height=rect.height;
+
+  const count=Math.min(
+   90,
+   Math.floor(width/12)
   );
 
-  const recipients=
-    'info@kafassoftware.in,mohammedhasim@kafassoftware.com';
+  particles=Array.from({length:count},()=>({
+   x:Math.random()*width,
+   y:Math.random()*height,
+   size:Math.random()*1.8+.4,
+   speed:Math.random()*.35+.08,
+   alpha:Math.random()*.55+.15,
+   drift:(Math.random()-.5)*.35
+  }));
+ }
 
-  window.location.href=
-    'mailto:'+recipients+
-    '?subject='+subject+
-    '&body='+body;
-});
+ function draw(){
+
+  ctx.clearRect(0,0,width,height);
+
+  particles.forEach(p=>{
+
+   p.y-=p.speed;
+   p.x+=p.drift;
+
+   if(p.y<0){
+    p.y=height;
+    p.x=Math.random()*width;
+   }
+
+   if(p.x<0)p.x=width;
+   if(p.x>width)p.x=0;
+
+   ctx.beginPath();
+   ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
+
+   ctx.fillStyle="rgba(242,190,91,"+p.alpha+")";
+   ctx.shadowBlur=10;
+   ctx.shadowColor="#d8a441";
+
+   ctx.fill();
+  });
+
+  ctx.shadowBlur=0;
+
+  animationFrame=requestAnimationFrame(draw);
+ }
+
+ resize();
+ draw();
+
+ window.addEventListener("resize",resize);
+
+ document.addEventListener("visibilitychange",()=>{
+  if(document.hidden){
+   cancelAnimationFrame(animationFrame);
+  }else{
+   cancelAnimationFrame(animationFrame);
+   draw();
+  }
+ });
+
+})();
+
 </script>
 
 </body>
